@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31727.386
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerrankAlgorithms", "HackerrankAlgorithms\HackerrankAlgorithms.csproj", "{13559D6A-23F3-4A32-B98E-5245FB7EC95B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CertificateTasks", "CertificateTasks\CertificateTasks.csproj", "{5D38B754-AE64-4DDD-8384-87B1CD14CD61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CertificateTasks", "StanfordTasks\CertificateTasks.csproj", "{5D38B754-AE64-4DDD-8384-87B1CD14CD61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

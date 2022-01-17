@@ -10,6 +10,7 @@ So if your answer is 1198233847, then just type 1198233847 in the space provided
 using System;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace CertificateTasks
 {
@@ -23,8 +24,8 @@ namespace CertificateTasks
 
         public int[] ReadInput()
         {
-            
-            var list = File.ReadAllLines(@"C:\Users\Ganna Gaidabas\Desktop\inv.txt").ToList();
+            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources\inv.txt");
+            var list = File.ReadAllLines(path).ToList();
             var numberOfQueries = Convert.ToInt32(list.Count);
             int[] convertedParams = new int[numberOfQueries];
             for (int i = 0; i < numberOfQueries; i++)
@@ -32,14 +33,6 @@ namespace CertificateTasks
                 convertedParams[i] = Convert.ToInt32(list[i]);
             }
             return convertedParams;
-            //var arrayCount = Convert.ToInt32(Console.ReadLine());
-            //int[] inputValues = new int[arrayCount];
-            //var r = Console.ReadLine().Split(' ');
-            //for (int i = 0; i < r.Length; i++)
-            //{
-            //    inputValues[i] = Convert.ToInt32(r[i]);
-            //}
-            //return inputValues;
         }
 
         public int[] SortAndCount(int[] unorderedValues)

@@ -13,6 +13,7 @@ using CertificateTasks.Heap;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 
 namespace CertificateTasks
 {
@@ -77,8 +78,10 @@ namespace CertificateTasks
 
         public List<int> ReadDataStanford()
         {
-            var numberOfQueries = File.ReadAllLines(@"C:\Users\Ganna Gaidabas\Desktop\Median.txt");
             List<int> input = new List<int>();
+
+            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources\Median.txt");
+            var numberOfQueries = File.ReadAllLines(path);
 
             for (int i = 0; i < numberOfQueries.Length; i++)
             {

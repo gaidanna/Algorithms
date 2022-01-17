@@ -3,7 +3,6 @@ using System;
 
 namespace CertificateTasks.Heap
 {
-    //didnt check this approach
     public class MaxHeap : IHeap
     {
         public static int capacity = 10;

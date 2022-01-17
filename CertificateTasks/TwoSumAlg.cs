@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace CertificateTasks
 {
@@ -28,8 +29,9 @@ namespace CertificateTasks
         {
             var inputData = new Dictionary<long, int>();
             var count = 1;
-            var input = File.ReadAllLines(@"C:\Users\Ganna Gaidabas\Desktop\algo1-programming_prob-2sum.txt").ToList();
 
+            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources\algo1-programming_prob-2sum.txt");
+            var input = File.ReadAllLines(path).ToList();
             for (int i = 0; i < input.Count; i++)
             {
                 var key = Convert.ToInt64(input[i]);

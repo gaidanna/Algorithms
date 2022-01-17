@@ -46,6 +46,7 @@ CODE OFR IT IN QuickSort2
 using System;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace CertificateTasks
 {
@@ -110,7 +111,8 @@ namespace CertificateTasks
 
         public int[] ReadInput()
         {
-            var list = File.ReadAllLines(@"C:\Users\Ganna Gaidabas\Desktop\QuickSort.txt").ToList();
+            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources\QuickSort.txt");
+            var list = File.ReadAllLines(path).ToList();
             var numberOfQueries = Convert.ToInt32(list.Count);
             int[] convertedParams = new int[numberOfQueries];
             for (int i = 0; i < numberOfQueries; i++)

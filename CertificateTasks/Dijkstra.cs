@@ -44,6 +44,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace CertificateTasks
 {
@@ -111,7 +112,9 @@ namespace CertificateTasks
         public Dictionary<int, List<Tuple<int, int>>> ReadInput()
         {
             Dictionary<int, List<Tuple<int, int>>> inputValues = new Dictionary<int, List<Tuple<int, int>>>();
-            var inputData = File.ReadAllLines(@"C:\Users\Ganna Gaidabas\Desktop\dijkstraData.txt").ToList();
+
+            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources\dijkstraData.txt");
+            var inputData = File.ReadAllLines(path).ToList();
             for (int i = 0; i < inputData.Count; i++)
             {
                 var splittedValues = inputData[i].Split('\t', StringSplitOptions.RemoveEmptyEntries);

@@ -5,4 +5,38 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\algo1-programming_prob-2sum.txt" />
+    <None Remove="Resources\dijkstraData.txt" />
+    <None Remove="Resources\inv.txt" />
+    <None Remove="Resources\kargerMinCut.txt" />
+    <None Remove="Resources\Median.txt" />
+    <None Remove="Resources\QuickSort.txt" />
+    <None Remove="Resources\SCC.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\algo1-programming_prob-2sum.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\dijkstraData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\inv.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\kargerMinCut.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Median.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\QuickSort.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SCC.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

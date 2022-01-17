@@ -27,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace CertificateTasks
 {
@@ -147,7 +148,9 @@ namespace CertificateTasks
         public List<string[]> ReadInput()
         {
             var edgeValues = new List<string[]>();
-            var lineCollection = File.ReadAllLines(@"C:\Users\Ganna Gaidabas\Desktop\SCC.txt");
+
+            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources\SCC.txt");
+            var lineCollection = File.ReadAllLines(path).ToList();
             foreach (var line in lineCollection)
             {
                 var edges = line.Split(" ", StringSplitOptions.RemoveEmptyEntries);

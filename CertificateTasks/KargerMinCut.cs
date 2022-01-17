@@ -18,6 +18,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace CertificateTasks
 {
@@ -92,7 +93,9 @@ namespace CertificateTasks
         public List<List<int>> ReadInput()
         {
             List<List<int>> output = new List<List<int>>();
-            var inputData = File.ReadAllLines(@"C:\Users\Ganna Gaidabas\Desktop\kargerMinCut.txt").ToList();
+
+            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources\kargerMinCut.txt");
+            var inputData = File.ReadAllLines(path).ToList();
             for (int i = 0; i < inputData.Count; i++)
             {
                 var elements = inputData[i].Split('\t', StringSplitOptions.RemoveEmptyEntries);

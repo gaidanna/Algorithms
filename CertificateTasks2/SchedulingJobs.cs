@@ -76,16 +76,16 @@ namespace CertificateTasks2
         public int CompareTo(object obj)
         {
             Job Temp = (Job)obj;
-            if (this.Weight - this.Length < Temp.Weight - Temp.Length)
-                return 1;
-            if (this.Weight - this.Length > Temp.Weight - Temp.Length)
-                return -1;
+            //if (this.Weight - this.Length < Temp.Weight - Temp.Length)
+            //    return 1;
+            //if (this.Weight - this.Length > Temp.Weight - Temp.Length)
+            //    return -1;
 
             // logic for second task
-            //if ((float)this.Weight / this.Length < (float)Temp.Weight / Temp.Length)
-            //    return 1;
-            //if ((float)this.Weight / this.Length > (float)Temp.Weight / Temp.Length)
-            //    return -1;
+            if ((float)this.Weight / this.Length < (float)Temp.Weight / Temp.Length)
+                return 1;
+            if ((float)this.Weight / this.Length > (float)Temp.Weight / Temp.Length)
+                return -1;
 
             else
             {

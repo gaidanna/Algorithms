@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,15 +6,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\clustering1.txt" />
+    <None Remove="Resources\clustering_big.txt" />
     <None Remove="Resources\edges.txt" />
+    <None Remove="Resources\huffman.txt" />
     <None Remove="Resources\jobs.txt" />
+    <None Remove="Resources\mwis.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Resources\clustering1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\clustering_big.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\edges.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\huffman.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\jobs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\mwis.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

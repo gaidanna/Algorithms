@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -11,6 +11,8 @@
     <None Remove="Resources\edges.txt" />
     <None Remove="Resources\huffman.txt" />
     <None Remove="Resources\jobs.txt" />
+    <None Remove="Resources\knapsack1.txt" />
+    <None Remove="Resources\knapsack_big.txt" />
     <None Remove="Resources\mwis.txt" />
   </ItemGroup>
 
@@ -28,6 +30,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\jobs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\knapsack1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\knapsack_big.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\mwis.txt">

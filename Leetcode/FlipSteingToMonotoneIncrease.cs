@@ -49,43 +49,6 @@ namespace Leetcode
                 numberOfFlips = Math.Min(numberOfFlips, oneCounts[i] + numberOfRemainingZeroes);
             }
             return numberOfFlips;
-
-            //int[] leftOnes = new int[s.Length];
-            //int ones = 0;
-            //for (int i = 0; i < s.Length; i++)
-            //{
-            //    if (s[i] == '1')
-            //    {
-            //        ones += 1;
-            //    }
-            //    leftOnes[i] = ones;
-            //}
-
-            //// worst-case scenario: flip all zeros
-            //int flips = s.Length - ones;
-            //for (int i = 0; i < s.Length; i++)
-            //{
-            //    int rightOnes = ones - leftOnes[i];
-            //    int rightZeros = s.Length - i - 1 - rightOnes;
-            //    // flip all ones on the left and all zeros on the right
-            //    flips = Math.Min(flips, leftOnes[i] + rightZeros);
-            //}
-
-            //return flips;
-
-
-            //var id = s.IndexOf("1");
-            //var countOnes = s.Where(i => i == '1').Count();
-            //var tempString = String.Empty;
-            //var replaceZeros = s.Length - id - countOnes;
-            //if (replaceZeros < countOnes)
-            //{
-            //    return replaceZeros;
-            //}
-            //else
-            //{
-            //    return countOnes;
-            //}
         }
     }
 }

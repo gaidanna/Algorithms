@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace HackerrankAlgorithms.structures
 {
-    //didnt check this approach
     public class MaxHeap : IHeap
     {
         public static int capacity = 10;

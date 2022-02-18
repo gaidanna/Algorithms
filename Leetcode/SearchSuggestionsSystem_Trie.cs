@@ -1,4 +1,21 @@
-﻿using System;
+﻿/* You are given an array of strings products and a string searchWord.
+Design a system that suggests at most three product names from products after each character of searchWord is typed. Suggested products should have common prefix with searchWord. If there are more than three products with a common prefix return the three lexicographically minimums products.
+Return a list of lists of the suggested products after each character of searchWord is typed.
+
+Example 1:
+Input: products = ["mobile","mouse","moneypot","monitor","mousepad"], searchWord = "mouse"
+Output: [
+["mobile","moneypot","monitor"],
+["mobile","moneypot","monitor"],
+["mouse","mousepad"],
+["mouse","mousepad"],
+["mouse","mousepad"]
+]
+Explanation: products sorted lexicographically = ["mobile","moneypot","monitor","mouse","mousepad"]
+After typing m and mo all products match and we show user ["mobile","moneypot","monitor"]
+After typing mou, mous and mouse the system suggests ["mouse","mousepad"]
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,7 +74,7 @@ namespace Leetcode
                 {
                     if (currentNode.Children[searchCombination[i] - 'a'] == null)
                     {
-                        return null;
+                        return new List<string>();
                     }
                     else
                     {
@@ -75,48 +92,21 @@ namespace Leetcode
                 {
                     return words;
                 }
+                if (node.IsEndOfWord)
+                {
+                    words.Add(sb.ToString());
+                }
                 for (int i = 0; i < node.Children.Length; i++)
                 {
                     if (node.Children[i] != null)
                     {
                         sb.Append(node.Children[i].Value);
-                        if (node.Children[i].IsEndOfWord)
-                        {
-                            words.Add(sb.ToString());
-                        //    sb.Remove(sb.Length - 1, 1);
-                        //    return words;
-                        //}
-                        //else
-                        //{
-                            DFS(node.Children[i], sb, words);
-                            sb.Remove(sb.Length - 1, 1);
-                        }
+
+                        words = DFS(node.Children[i], sb, words);
+                        sb.Remove(sb.Length - 1, 1);
                     }
                 }
                 return words;
-                //if (words.Count >= 3)
-                //{
-                //    return words;
-                //}
-                //for (int i = 0; i < node.Children.Length; i++)
-                //{
-                //    if (node.Children[i] != null)
-                //    {
-                //        sb.Append(node.Children[i].Value);
-                //        if (node.Children[i].IsEndOfWord)
-                //        {
-                //            words.Add(sb.ToString());
-                //        }
-                //        else
-                //        {
-                //            DFS(node.Children[i], sb, words);
-                //        }
-
-                //        sb.Remove(sb.Length - 1, 1);
-                //        return words;
-                //    }
-                //}
-                //return words;
             }
         }
 
@@ -124,6 +114,7 @@ namespace Leetcode
         {
             Node root = new Node();
             IList<IList<string>> result = new List<IList<string>>();
+
             foreach (var word in products)
             {
                 root.Insert(word);
